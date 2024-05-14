@@ -13,5 +13,22 @@
  */
 
 const t9Keyboard = value => {
-  return
+  if(typeof value !== 'string') throw new Error('t9keyboard "value" argument must be a string')
+  if(!value) return ''
+  let result = '' 
+  let t9Numbers = value.split('-') 
+  for(let i = 0; i < t9Numbers.length; i++) {
+    let num = parseInt(t9Numbers[i][0]);
+    if(num === 0) result += ' '.repeat(t9Numbers[i].length)
+    else {
+      let numCode = t9Numbers[i][0].charCodeAt(0);
+      let Ascii = numCode + 47 + ((num-2)*2) + (t9Numbers[i].length - 1);
+      if(num >= 8) Ascii += 1
+      result += String.fromCharCode(Ascii)
+    }
+  }
+  return result.toUpperCase()
 }
+
+console.log(t9Keyboard('44-33-555-555-666-00-9-666-777-555-3')) // HELLO  WORLD
+console.log(t9Keyboard('6-666-88-777-33-3-33-888')) // MOUREDEV
