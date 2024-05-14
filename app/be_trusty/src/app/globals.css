@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  display: block;
+  position: relative;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }      
+
+  .nav_icon {
+    color: white;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+  }
+}
