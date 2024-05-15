@@ -2,9 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: block;
   position: relative;
+  scroll-behavior: smooth;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.open_calendar {
+  animation: opencalendar 400ms ease-in-out forwards;
+  filter: opacity(0);
+}
+
+@keyframes opencalendar {
+  from {
+    transform: translateY(-50%);
+    filter: opacity(.5)
+  }
+  to {
+    transform: translateY(0);
+    filter: opacity(1)
+  }
 }
 
 @layer utilities {
@@ -18,4 +43,22 @@ body {
     width: 35px;
     cursor: pointer;
   }
+}
+
+/* Overriding MUI base styles */
+
+.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel {
+  color: #f5f5f5 !important
+}
+
+.css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  color: #f5f5f5 !important;
+}
+
+.css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  color: #f5f5f5 !important;
+}
+
+.Mui-disabled {
+  color: gray !important;
 }

@@ -1,9 +1,17 @@
+'use client'
+
+import ApartHeader from "@/ui/home/ApartHeader";
+import ApartImgs from "@/ui/home/ApartImgs";
+import { ApartImgsProps, ApartType } from "../../typedefs/home";
+import { apart } from "@/data";
+import ApartReservation from "@/ui/home/ApartReservation";
 
 export default function Home() {
   return (
-    <div className="relative min-h-[800px] w-auto py-2 px-2 bg-blue-700 z-[-10]">
-      <div className="h-12 w-12 absolute top-0 bg-red-500"></div>
-      <div className="h-12 w-12 absolute bottom-0 bg-green-500"></div>
+    <div className="relative flex flex-col items-center min-h-[800px] w-auto bg-[#0f172a]">
+      <ApartHeader owner="Frank Apart"></ApartHeader>
+      <ApartImgs imgnames={apart.imgs}></ApartImgs>
+      <ApartReservation pricePerNight={apart.pricePerNight}></ApartReservation>
     </div>
   );
 }

@@ -20,9 +20,9 @@ export default function RootLayout({
       <body>
         <Navigation></Navigation>
         <Header></Header>
-        <main className="relative overflow-auto md:w-[calc(100%-90px)] md:float-right">
+        <main className="relative overflow-auto md:w-[calc(100%-90px)] md:float-right z-0">
           {children}
-          <div className='w-full h-[75px] md:hidden block md:h-[100vh] md:w-[90px]'></div>
+          <div className='w-full h-[75px] md:hidden block md:h-[100vh] md:w-[90px] bg-transparent'></div>
         </main>
       </body>
     </html>
