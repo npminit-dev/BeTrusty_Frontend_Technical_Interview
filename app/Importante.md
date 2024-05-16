@@ -14,7 +14,6 @@ Algunas librerías adicionales que he utilizado:
 
 -  *MaterialUI: x-date-pickers*
 -  *DayJs*
--  *MillionJS*
 -  *react-simply-carousel*
 -  *sharp*
 -  *react-icons*
