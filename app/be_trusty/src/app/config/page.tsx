@@ -2,8 +2,8 @@
 
 export default function Config() {
   return (
-    <section>
-      CONFIG
+    <section className="text-white">
+      CONFIG page content
     </section>
   )
 }

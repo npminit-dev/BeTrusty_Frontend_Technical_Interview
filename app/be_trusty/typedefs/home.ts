@@ -1,13 +1,18 @@
 export type ApartHeaderProps = {
   owner: string,
 }
+export type ApartImagesType = {
+  imgname: string,
+  description: string,
+  alt: string
+}
 
 export type ApartImgsProps = {
-  imgnames: Array<string>
+  images: Array<ApartImagesType>
 }
 
 export type ApartType = {
-  imgs: Array<string>,
+  imgs: Array<ApartImagesType>,
   description: string,
   pricePerNight: number,
   owner: {
