@@ -6,7 +6,7 @@ import { roboto } from '../fonts'
 
 export default function ApartHeader({ owner }: ApartHeaderProps) {
   return (
-    <header className="w-full flex items-center justify-between px-4 py-4 my-2 md:px-8 md:max-w-[1200px]" onClick={() => console.log('hello world')}>
+    <header className="w-full flex items-center justify-between px-4 py-4 my-2 md:px-8 md:max-w-[1200px]">
       <h2 style={roboto.style} className="font-bold text-white text-[24px]">{ owner }</h2>
       <div className="w-[100px] h-[20px] flex items-center justify-between">
         <div className="h-[45px] w-[45px] flex items-center justify-center rounded-full bg-[#164155]">

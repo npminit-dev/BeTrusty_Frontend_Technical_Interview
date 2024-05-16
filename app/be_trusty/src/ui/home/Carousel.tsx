@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react';
-import ReactSimplyCarousel from 'react-simply-carousel'
 import { ApartImgsProps } from '../../../typedefs/home';
 import { v4 } from 'uuid';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import dynamic from 'next/dynamic';
+
+const ReactSimplyCarousel = dynamic(() => import('react-simply-carousel'))
 
 export default function TestCarousel({ images }: ApartImgsProps) {
 

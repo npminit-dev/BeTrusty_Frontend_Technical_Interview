@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { ApartReserveProps } from "../../../typedefs/home"
 import { roboto } from "../fonts"
-import { DateCalendar, DateView, LocalizationProvider } from "@mui/x-date-pickers";
+import { DateCalendar } from "@mui/x-date-pickers/DateCalendar/DateCalendar";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from "dayjs";
 import { calendarStyles } from "@/mui_styles";
@@ -22,14 +23,14 @@ export default function ApartReservation({ pricePerNight }: ApartReserveProps) {
       if (daysdiff !== undefined) {
         if (daysdiff >= 0) setdays(daysdiff)
         else {
-          setenddate(startdate.add(1, 'day'))
+          setenddate(startdate)
           setdays(0)
         }
       }
     }
   }, [enddate, startdate]);
 
-  const handleEndDateChange = (p: any, view: DateView|undefined) => {
+  const handleEndDateChange = (p: any, view: ('day'|'month'|'year')|undefined) => {
     setenddate(dayjs(p.$d))
     if (startdate) {
       if (view === 'day') {
@@ -73,7 +74,7 @@ export default function ApartReservation({ pricePerNight }: ApartReserveProps) {
                   <DateCalendar
                     sx={calendarStyles}
                     className="rounded-md" disablePast
-                    minDate={startdate?.add(1, 'day') || dayjs()}
+                    minDate={startdate || dayjs()}
                     onChange={(p, _, view) => handleEndDateChange(p, view)}
                   />
                 </span>
