@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/ui/Header";
 import Navigation from "@/ui/Navigation";
+import { useEffect } from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",

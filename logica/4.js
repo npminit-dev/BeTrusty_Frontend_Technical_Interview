@@ -2,3 +2,5 @@
 //Pista, el codigo presentado handlea dos diferentes tipos de tokens (api token, session token)
 
 import image from './code_example.png'
+
+/* Respuesta en 4.md en el mismo directorio */
